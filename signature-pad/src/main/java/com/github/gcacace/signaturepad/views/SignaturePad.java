@@ -407,7 +407,7 @@ public class SignaturePad extends View {
 
     private void addPoint(TimedPoint newPoint) {
         mPoints.add(newPoint);
-        mAllPoints.add(newPoint)
+        mAllPoints.add(newPoint);
 
         int pointsCount = mPoints.size();
         if (pointsCount > 3) {
