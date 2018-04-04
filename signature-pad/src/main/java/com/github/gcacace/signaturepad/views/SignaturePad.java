@@ -28,6 +28,7 @@ import java.util.List;
 public class SignaturePad extends View {
     //View state
     private List<TimedPoint> mPoints;
+    private List<TimedPoint> mAllPoints;
     private boolean mIsEmpty;
     private float mLastTouchX;
     private float mLastTouchY;
@@ -149,6 +150,7 @@ public class SignaturePad extends View {
     public void clear() {
         mSvgBuilder.clear();
         mPoints = new ArrayList<>();
+        mAllPoints = new ArrayList<>();
         mLastVelocity = 0;
         mLastWidth = (mMinWidth + mMaxWidth) / 2;
 
@@ -405,6 +407,7 @@ public class SignaturePad extends View {
 
     private void addPoint(TimedPoint newPoint) {
         mPoints.add(newPoint);
+        mAllPoints.add(newPoint)
 
         int pointsCount = mPoints.size();
         if (pointsCount > 3) {
@@ -587,6 +590,6 @@ public class SignaturePad extends View {
     }
 
     public List<TimedPoint> getPoints() {
-        return mPoints;
+        return mAllPoints;
     }
 }
